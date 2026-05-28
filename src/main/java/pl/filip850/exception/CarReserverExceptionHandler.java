@@ -8,14 +8,11 @@ import pl.filip850.model.error.ExceptionResponse;
 @RestControllerAdvice
 public class CarReserverExceptionHandler {
 
-//  @ExceptionHandler()
-  public ResponseEntity<ExceptionResponse> handleCarNotAvailableException() {
+  @ExceptionHandler(CarIsNotAvailableException.class)
+  public ResponseEntity<ExceptionResponse> handleCarNotAvailableException(CarIsNotAvailableException ex) {
+
     return ResponseEntity
-        .status(409)
-        .body(new ExceptionResponse(
-            "Samochod nie jest dostepny w tym terminie",
-            "Car is unavailable in this time",
-            409
-        ));
+        .status(ex.getResponseBody().statusCode())
+        .body(ex.getResponseBody());
   }
 }
