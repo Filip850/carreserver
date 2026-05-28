@@ -1,0 +1,1 @@
+CZEMU MVC a nie DDD

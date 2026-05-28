@@ -1,0 +1,7 @@
+package pl.filip850.repository;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class ReservationRepository {
+}
