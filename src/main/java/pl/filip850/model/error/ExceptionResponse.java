@@ -1,2 +1,6 @@
 package pl.filip850.model.error;
-public record ExceptionResponse(String messagePl, String messageEn, int statusCode){}
+
+import org.springframework.http.HttpStatus;
+
+
+public record ExceptionResponse(String messagePl, String messageEn, HttpStatus statusCode){ }
